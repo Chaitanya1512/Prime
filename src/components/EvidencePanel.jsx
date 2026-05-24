@@ -439,7 +439,7 @@ export default function EvidencePanel({ item, onSubmit, onCancel }) {
         onClick={onCancel}
       />
 
-      <div className="relative w-full max-w-4xl rounded-[28px] border border-black/5 bg-white p-6 sm:p-8 shadow-[0_12px_60px_rgba(0,0,0,0.06)] z-[130]">
+      <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto custom-scrollbar rounded-[28px] border border-black/5 bg-white p-5 sm:p-8 shadow-[0_12px_60px_rgba(0,0,0,0.06)] z-[130]">
         
         {toastMessage && (
           <div className="absolute top-4 left-1/2 -translate-x-1/2 rounded-full bg-slate-900 px-5 py-2 text-xs font-semibold text-white shadow-lg z-[200] animate-bounce">

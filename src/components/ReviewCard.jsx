@@ -23,7 +23,7 @@ export default function ReviewCard({
     >
       <button
         onClick={onBrowsePrev}
-        className="absolute left-2 md:-left-16 z-20 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border border-black/5 bg-white/70 text-slate-400 shadow-md backdrop-blur-sm transition-all hover:scale-105 hover:bg-white hover:text-slate-700 active:scale-95"
+        className="hidden md:flex absolute md:-left-16 z-20 h-12 w-12 cursor-pointer items-center justify-center rounded-full border border-black/5 bg-white/70 text-slate-400 shadow-md backdrop-blur-sm transition-all hover:scale-105 hover:bg-white hover:text-slate-700 active:scale-95"
         aria-label="Previous card"
       >
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -31,8 +31,8 @@ export default function ReviewCard({
         </svg>
       </button>
       
-      <section className="relative w-full max-w-xl rounded-custom border border-black/[0.03] bg-white p-8 shadow-xl shadow-slate-100/50 sm:p-10">
-        <div className="mb-8 flex items-center justify-between">
+      <section className="relative w-full max-w-xl rounded-custom border border-black/[0.03] bg-white p-6 shadow-xl shadow-slate-100/50 sm:p-10">
+        <div className="mb-5 sm:mb-8 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <div
               className="flex h-7 items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-bold tracking-widest uppercase transition-all"
@@ -50,17 +50,17 @@ export default function ReviewCard({
           <div className="h-1.5 w-1.5 rounded-full bg-slate-200"></div>
         </div>
 
-        <h2 className="font-serif text-3xl font-bold leading-tight tracking-tight text-slate-800 sm:text-4xl">
+        <h2 className="font-serif text-2xl font-bold leading-tight tracking-tight text-slate-800 sm:text-4xl">
           {item.title}
         </h2>
 
-        <p className="mt-2.5 text-base font-medium text-slate-400">
+        <p className="mt-2 text-sm font-medium text-slate-400 sm:text-base">
           {item.subtitle}
         </p>
 
-        <div className="my-8 border-t border-slate-100" />
+        <div className="my-6 sm:my-8 border-t border-slate-100" />
 
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6">
           <div className="min-h-[24px]">
             {item.status ? (
               <p className="text-sm font-medium text-slate-500 italic">
@@ -98,7 +98,7 @@ export default function ReviewCard({
 
       <button
         onClick={onBrowseNext}
-        className="absolute right-2 md:-left-auto md:-right-16 z-20 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border border-black/5 bg-white/70 text-slate-400 shadow-md backdrop-blur-sm transition-all hover:scale-105 hover:bg-white hover:text-slate-700 active:scale-95"
+        className="hidden md:flex absolute md:-left-auto md:-right-16 z-20 h-12 w-12 cursor-pointer items-center justify-center rounded-full border border-black/5 bg-white/70 text-slate-400 shadow-md backdrop-blur-sm transition-all hover:scale-105 hover:bg-white hover:text-slate-700 active:scale-95"
         aria-label="Next card"
       >
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

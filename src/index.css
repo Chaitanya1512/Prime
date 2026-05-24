@@ -60,7 +60,7 @@
   body {
     background-color: var(--color-serene-surface);
     color: #1e293b;
-    @apply antialiased min-h-screen overflow-hidden;
+    @apply antialiased min-h-screen overflow-x-hidden overflow-y-auto;
     font-family: var(--font-sans);
   }
 }
