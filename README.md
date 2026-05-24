@@ -70,7 +70,7 @@ The underlying systems stayed complex. The interface just became narrower.
 
 ## Live Demo
 
-[](#)
+[Link](https://chaitanya1512.github.io/Prime/)
 
 ## Setup
 
