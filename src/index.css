@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-serene-blue: #4A6580;
+  --color-serene-surface: #f7fafc;
+  --color-serene-container: #ffffff;
+
+  --font-serif: "Literata", serif;
+  --font-sans: "Literata", serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --radius-custom: 1.5rem;
+}
+
+@utility progress-ring {
+  position: relative;
+  width: 48px;
+  height: 48px;
+
+  & svg {
+    transform: rotate(-90deg);
+  }
+
+  & circle {
+    fill: transparent;
+    stroke-width: 3;
+  }
+}
+
+@utility progress-ring-bg {
+  stroke: #e2e8f0;
+}
+
+@utility progress-ring-value {
+  stroke: var(--color-serene-blue);
+  stroke-dasharray: 125.6;
+  /* 2 * PI * 20 */
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+@utility slide-in {
+  animation: slideIn 0.4s cubic-bezier(0.2, 0, 0, 1) forwards;
+}
+
+@utility slide-left {
+  animation: slideLeft 0.35s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+
+@utility slide-right {
+  animation: slideRight 0.35s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+
+@utility fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-serene-surface);
+    color: #1e293b;
+    @apply antialiased min-h-screen overflow-hidden;
+    font-family: var(--font-sans);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@utility custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+}
